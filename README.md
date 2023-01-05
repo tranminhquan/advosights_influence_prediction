@@ -143,4 +143,17 @@ To calculate the probability of influence of given post from a user to another t
 - run `app.py` file `python app.py`
 
 
+# Citation
+```
+@inproceedings{tran2021-influence_prediction,
+  title={Influence Prediction on Social Media Network through Contents and Interaction Behaviors using Attention-based Knowledge Graph},
+  author={Tran, Quan M and Nguyen, Hien D and Nguyen, Binh T and Pham, Vuong T and Le, Trong T},
+  booktitle={2021 13th International Conference on Knowledge and Systems Engineering (KSE)},
+  pages={1--7},
+  year={2021},
+  organization={IEEE}
+}
+```
+
+
 
