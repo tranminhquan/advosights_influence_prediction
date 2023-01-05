@@ -45,11 +45,37 @@ To encode the dedicated list of user ids, run
 After encoding, the function produces the embedding id
 
 ## Calculate AF
+To calculate the amplification of a user, run
+
 `python calaf.py --uid=  --embedding_id=  --gpu= `
 
 * `uid`: user id to calculate the AF score 
 * `embedding_id`: embedding id that contains the `uid`
 * `gpu`: `True/False` - whether to acclerate the calculation by GPU or not
+
+## Predict influence of a given post to a specific user
+Setup the config in the `POST_PRED` in `config/calaf.py`, the defaul is `af_all` as follow
+
+```
+POST_PRED = {
+    'af_all':
+    {
+        'USER_EDGE_LIST': '../files/graphdata/user_edge_list_2.hdf5',
+        'CSIF_MODEL': '../files/models/model_exp2.pt',
+        'NODE_DICT': '../files/graphdata/node_dict_5.hdf5',
+        'USER_EMBEDDINGS': '../files/embeddings/nVGAE6_128_emb_numpy.hdf5',
+        'W2V_MODEL': '../files/models/d2v.model'
+    }
+}
+```
+To calculate the probability of influence of given post from a user to another target user, run
+
+`python pred-influence-uid.py --from-uid=   --to-uid=   --post-content=     --config=`
+* `from_uid`: user to publish the content
+* `to_uid`: user to measure the probability of influence
+* `post_content`: the content of post
+* `config`: config name in the `config/calaf.py`, if not given, the defaul will be used
+
 
 # Run showcase demo
 

@@ -14,6 +14,13 @@ from collections import OrderedDict
 
 class PostInfluencePredict():
 
+    def __init__(self, config=None) -> None:
+        if config is None:
+            self.load_files()
+        else:
+            self.load_files(dataset=config)
+
+    
     def load_files(self, dataset):
         self.dataset = dataset.lower()
 
